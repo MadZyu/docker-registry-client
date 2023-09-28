@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/docker/distribution"
+	"github.com/distribution/distribution"
 	digest "github.com/opencontainers/go-digest"
 )
 
