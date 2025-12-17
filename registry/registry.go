@@ -90,6 +90,9 @@ func newFromTransport(registryURL, username, password string, transport http.Rou
 		URL: url,
 		Client: &http.Client{
 			Transport: transport,
+			CheckRedirect: func(req *http.Request, via []*http.Request) error {
+				return http.ErrNotSupported // 不允许重定向
+			},
 		},
 		Logf: logf,
 	}
